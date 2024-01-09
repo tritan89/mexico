@@ -1,0 +1,54 @@
+.shape {
+    height: 0;
+    width: 0;
+    border-bottom: 30px solid black;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+  }
+
+  .heroWrapper {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+  }
+  
+  .heroImage {
+    object-fit: cover;
+    object-position: 30% 70%;
+    z-index: -1;
+    padding: 0;
+  }
+  
+  .heroContent {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  
+  }
+
+  .hookTitle {
+    position: relative;
+    top: 10%;
+    left: 1%;
+ 
+    padding: 5px;
+
+  }
+  .hooktext {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .hookContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    column-gap: 10px;
+  }
+
