@@ -5,9 +5,9 @@ import ImageTextComponent from './components/hook';
 import Link from 'next/link';
 
 
-export default function Page({ data }: { data: any}) {
+export default function Page() {
  
-  console.log(data);
+  // console.log(data);
   return (
     <main className="flex min-h-screen flex-col ">
       <HeroImage
