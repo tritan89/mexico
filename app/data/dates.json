@@ -32,8 +32,8 @@
         },
         {
             "title": "Holiday Party",
-            "start": "2023-12-18",
-            "end": "2023-12-18",
-            "className": "error"
+            "start": "2024-01-10",
+            "end": "2024-01-10",
+            "className": "success"
         }
     ]

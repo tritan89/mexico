@@ -2,6 +2,7 @@
 import styles from '@/app/ui/home.module.css';
 import HeroImage from './components/heroImage';
 import ImageTextComponent from './components/hook';
+import Link from 'next/link';
 
 
 export default function Page({ data }: { data: any}) {
@@ -22,9 +23,8 @@ export default function Page({ data }: { data: any}) {
       />
       <div className="p-5"></div>
       
-      <div className='p-20'>
-        
-      see the calendar
+      <div className='p-20 text-5xl text-center'>
+        <Link href="/calendar">Book Your stay Now!</Link>
       </div>
       
     </main>
