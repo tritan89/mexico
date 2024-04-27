@@ -58,6 +58,10 @@ export default function Calendar({ data }: { data: any }) {
         
       </div>
         <form onSubmit={onSubmit}>
+          <input type="text" name='firstname' />
+          <input type="text" name='lastname' />
+          <input type="text" name='email' />
+          <input type="text" name='number'/>
           <input type="text" name="form1" />
           <button type="submit">Submit</button>
         </form>
