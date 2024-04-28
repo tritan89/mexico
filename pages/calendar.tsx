@@ -1,83 +1,83 @@
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction'; // for selectable
-import { promises as fs } from 'fs';
-import { FormEvent, useState } from 'react';
-import { set } from 'zod';
+// 'use client';
+// import 'tailwindcss/tailwind.css';
+// import FullCalendar from '@fullcalendar/react';
+// import dayGridPlugin from '@fullcalendar/daygrid';
+// import interactionPlugin from '@fullcalendar/interaction'; // for selectable
+// import Link from 'next/link';
+// import { promises as fs } from 'fs';
+// import { FormEvent, useState } from 'react';
+// import { createBookingRequest} from '@/app/lib/actions';
+// import { ShowUsers, CheckFreeDate } from '@/pages/api/users';
 
 
-export async function getStaticProps() {
-  const file = await fs.readFile(
-    process.cwd() + '/app/data/dates.json',
-    'utf8',
-  );
+// export default function Calendar({ data }: { data: any }) {
+//   const [dateStart, setStart] = useState();
+//   const [dateEnd, setEnd] = useState();
+//   const [dateObj, setDateObj] = useState();
 
-  const data = JSON.parse(file);
+//   function handleSelect(arg: any) {
+//     setStart(arg.startStr);
+//     setEnd(arg.endStr);
+//     setDateObj(arg);
+//   }
+//   const 
 
-  return {
-    props: {
-      data,
-    },
-  };
-}
 
-export default function Calendar({ data }: { data: any }) {
-  const [dateStart, setStart]= useState();
-  const [dateEnd, setEnd]= useState();  
-  const [dateObj, setDateObj]= useState();
 
-  function handleSelect(arg: any) {
-    setStart(arg.startStr)
-    setEnd(arg.endStr)
-    setDateObj(arg)
-    
-  }
+//   return (
+//     <div className="w-sw flex-col items-center justify-center">
+//       <h1 className="p-10 text-center text-5xl">Book your stay</h1>
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+//       <form action={createBookingRequest} className="max-w-sm mx-auto">
+//         <div className=' grid-cols-1  w-5/12 p-2'>
 
-    event.preventDefault();
-   
-    const formData = new FormData(event.currentTarget);
-    
-     const selected = {title: formData.get('form1'), start: dateStart, end: dateEnd, className: "success"}
-     const selectedJson = JSON.stringify(selected);
-     const response = await fetch('/api/submit', {
-      method: 'POST',
-      body: selectedJson,
-    });
-    console.log(selectedJson);
-  }
-
-  return (
-    <div className="w-sw flex items-center justify-center">
-      <div className="p-20 flex items-center">
+       
+       
+//           <label htmlFor="firstname" className="border-3 mr-2 p-1">
+//             First Name:
+//           </label>
+//           <input type="text" id="firstname" name="firstname" className='border-2 rounded' />
         
-        <div className="p-20 flex items-center">
-        start: {dateStart} 
-        end: {dateEnd}
         
-      </div>
-        <form onSubmit={onSubmit}>
-          <input type="text" name='firstname' />
-          <input type="text" name='lastname' />
-          <input type="text" name='email' />
-          <input type="text" name='number'/>
-          <input type="text" name="form1" />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-      <h1 className='text-5xl'>Calendar</h1>
-      <div className="w-6/12 p-10">
-        <FullCalendar
-          plugins={[dayGridPlugin, interactionPlugin]}
-          initialView="dayGridMonth"
-          events={data}
-          selectable={true}
-          selectOverlap={false}
+//           <label htmlFor="lastname" className="border-3 mr-2 p-1">
+//             Last Name:
+//           </label>
+//           <input type="text" id="lastname" name="lastname" className='border-2 rounded' />
         
-          select={handleSelect}
-        />
-      </div>
-    </div>
-  );
-}
+        
+//           <label htmlFor="email" className="border-3 mr-2 p-1">
+//             Email:
+//           </label>
+//           <input type="text" id="email" name="email" className='border-2 rounded'/>
+       
+        
+//           <label htmlFor="number" className="border-3 mr-2 p-1">
+//             Number:
+//           </label>
+//           <input type="text" id="number" name="number" className='border-2 rounded'/>
+//           <label htmlFor="start">Start Date:</label>
+//           <input type="date" id="start" value={dateStart}/>
+//           <label htmlFor="end">End Date:</label>
+//           <input type="date" id="end" value={dateEnd} />
+        
+//         <button type="submit" className='p-2 border-2 rounded'>Submit</button>
+        
+//         </div>
+        
+//       </form>
+
+//       <div className="flex items-center justify-center">
+//         <div className="w-6/12">
+//           <FullCalendar
+//             plugins={[dayGridPlugin, interactionPlugin]}
+//             initialView="dayGridMonth"
+//             events={data}
+//             selectable={true}
+//             selectOverlap={false}
+//             select={handleSelect}
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }

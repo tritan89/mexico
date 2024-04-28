@@ -1,8 +1,9 @@
-'use client'
-import styles from '@/app/ui/home.module.css';
+
+
 import HeroImage from './components/heroImage';
 import ImageTextComponent from './components/hook';
 import Link from 'next/link';
+import {ShowUsers, CheckFreeDate} from '@/pages/api/users';
 
 
 export default function Page() {
@@ -26,7 +27,8 @@ export default function Page() {
       <div className='p-20 text-5xl text-center'>
         <Link href="/calendar">Book Your stay Now!</Link>
       </div>
-      
+      {/* <ShowUsers params={{ user: "tristan" }} /> */}
+      <CheckFreeDate params={{ date: new Date("2022-01-02") }} />
     </main>
   );
 }
